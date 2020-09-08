@@ -49,10 +49,12 @@ Custom Toast in Android
 
 ## MainActivity.java
 
-Define views and listeners (check cod for details), then inflate the custom_toast_layout, and modify toast in listeners.
+Define views and listeners (checking code for details), then inflate the custom_toast_layout, and modify toast in listeners.
 
 ```
 btnPushToastCenter = findViewById(R.id.btnButtonCenter) as Button
+...
+layout = inflater.inflate(R.layout.custom_toast, findViewById(R.id.custom_layout_container))
 ...
 btnPushToastCenter.setOnClickListener { 
 ...
