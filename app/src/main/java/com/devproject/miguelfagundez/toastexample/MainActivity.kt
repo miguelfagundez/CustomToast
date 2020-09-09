@@ -7,6 +7,7 @@ import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 
@@ -19,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var textView : TextView
     lateinit var inflater : LayoutInflater
     lateinit var layout : View
+    lateinit var image : ImageView
     lateinit var toast: Toast
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,6 +41,7 @@ class MainActivity : AppCompatActivity() {
         layout = inflater.inflate(R.layout.custom_toast, findViewById(R.id.custom_layout_container))
 
         textView = layout.findViewById(R.id.textView) as TextView
+        image = layout.findViewById(R.id.imageView) as ImageView
 
     }
 
@@ -49,6 +52,7 @@ class MainActivity : AppCompatActivity() {
             toast.setGravity(Gravity.TOP, 0, 0)
             toast.view = layout
             textView.text = "  Toast TOP  "
+            image.setImageDrawable(resources.getDrawable(R.drawable.ic_problem))
             toast.show()
         }
 
@@ -57,6 +61,7 @@ class MainActivity : AppCompatActivity() {
             toast.setGravity(Gravity.CENTER, 0, 0)
             toast.view = layout
             textView.text = "  Toast CENTER  "
+            image.setImageDrawable(resources.getDrawable(R.drawable.ic_report))
             toast.show()
         }
 
@@ -65,6 +70,7 @@ class MainActivity : AppCompatActivity() {
             toast.setGravity(Gravity.BOTTOM, 0, 0)
             toast.view = layout
             textView.text = "  Toast BOTTOM  "
+            image.setImageDrawable(resources.getDrawable(R.drawable.ic_baseline_stars_24))
             toast.show()
         }
 
